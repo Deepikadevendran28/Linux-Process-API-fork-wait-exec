@@ -27,12 +27,15 @@ Test the C Program for the desired output.
 
 
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <unistd.h>
-#include <sys/wait.h>
-int main() {
+
+    #include <stdio.h>
+    #include <stdlib.h>
+    #include <unistd.h>
+    #include <sys/wait.h>
+    int main() {
+
     int pid = fork();
+
     if (pid == 0) { 
         printf("I am child, my PID is %d\n", getpid()); 
         printf("My parent PID is: %d\n", getppid()); 
@@ -41,7 +44,7 @@ int main() {
         printf("I am parent, my PID is %d\n", getpid()); 
         wait(NULL); 
     }
-}
+    }
 
 
 
@@ -64,13 +67,13 @@ int main() {
 ## C Program to execute Linux system commands using Linux API system calls exec() , exit() , wait() family
 
 
-
-#include <stdio.h>
-#include <stdlib.h>
-#include <sys/types.h>
-#include <sys/wait.h>
-#include <unistd.h>
-int main() {
+    #include <stdio.h>
+    #include <stdlib.h>
+    #include <sys/types.h>
+    #include <sys/wait.h>
+    #include <unistd.h>
+    int main() {
+    
     int status;
     printf("Running ps with execl\n");
     if (fork() == 0) {
@@ -98,7 +101,7 @@ int main() {
     }
     printf("Done.\n");
     return 0;
-}
+    }
 
 
 
